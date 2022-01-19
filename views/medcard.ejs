@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Nurse</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <table>
+      <tr>
+        <td>
+          <% studentsList.forEach(student => {%>
+          <div class="user">
+            <div class="name">
+              <%= student.name %> <%= student.surname %> <span class="gender"><%= student.birthDate %> </span>
+            </div> 
+            <div>
+              <%= student.classNumber %>
+            </div>
+            <div class="create">
+              <a href="/medcard/<%= student._id %>" class="btn btn3">Update</a>
+            </div>
+            <div>
+              <a onclick="return alert('Yoy can\'t delete record on this level.');"><div class="delete"></div></a>
+            </div>
+          </div> 
+          <%})%>
+        </td>
+      </tr>
+    </table>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.js"></script>
+    <script src="/js/main.js"></script>
+  </body>
+</html>
